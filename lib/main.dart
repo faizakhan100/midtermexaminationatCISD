@@ -44,7 +44,7 @@ class _homeState extends State<home> {
         itemBuilder: (context, index) {
           return ListTile(
             leading: CircleAvatar(child: Text("${index + 1}")),
-            title: Text(item[index].toString()),
+            title: Text(item[index]),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -71,19 +71,22 @@ class _homeState extends State<home> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          mywidget(0);
+          mywidget(null);
         },
         child: Icon(Icons.add),
       ),
     );
   }
 
+
+
+
   void mywidget(var myindex) {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Enter your Task "),
+          title: Text(myindex==null?"Enter your Task ": "Update your task"),
           content: TextField(
             onChanged: (value) {
               output = value;
@@ -93,19 +96,17 @@ class _homeState extends State<home> {
           actions: [
             ElevatedButton(
               onPressed: () {
-                if (mywidget == 0) {
-                  setState(() {
-                    item.add(output);
-                  });
-                } else {
-                  setState(() {
-                    item.replaceRange(myindex, myindex + 1, [output]);
-                  });
-                }
+                myindex == null
+                    ? setState(() {
+                      item.add(output);
+                    })
+                    : setState(() {
+                      item.replaceRange(myindex, myindex + 1, {output});
+                    });
 
                 Navigator.of(context).pop();
               },
-              child: mywidget != 0 ? Text("Update") : Text("ADD"),
+              child: myindex==null? Text("Add") : Text("Update"),
             ),
           ],
         );
