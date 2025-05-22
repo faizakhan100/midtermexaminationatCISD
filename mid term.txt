@@ -1,0 +1,52 @@
+SEC A : 19
+SEC B: 30
+SEC C : 49
+Total 98
+
+section "A"
+
+1. TRUE
+2. FALSE
+3. TRUE
+4. TRUE
+5. TRUE
+6. FALSE 
+7. TRUE
+8. TRUE
+9. FALSE
+10.TRUE
+
+Section "B"
+
+1. Differentiate between StatefulWidget and StatelessWidget?
+stateless widget is the static widget where UI layout never change. in statless widget if you need to change the
+ useinterface you need to make the new layout its an unchangaeble widget.
+
+meanwlhile the stateful widget is the dynamic widget in which UI layout can be change at any point. 
+its a changeable widget.
+
+2.Explain how pubspec.yaml manages assets and packages?
+ANS: pubspace play crucial part in flutter project, it helps to import the assets container in which all images 
+logos, font style can save and use it in application. this file also helps to import the packages in project.
+ 
+3. How do you pass data between two Flutter screens?
+ANS: Data can pass between two flutter screen via context, item[index].toString()
+through customize widget we can utlize lines of code in multiple time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
